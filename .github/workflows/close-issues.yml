@@ -36,7 +36,7 @@ jobs:
                   });
                   console.log(`Closed issue #${issueNumber}`);
                 } catch (e) {
-                  console.log(`Couldn't automatically close issue #${issueNumber}. Skipping issue.`);
+                  console.error(`Could not automatically close issue #${issueNumber}. Skipping issue.`);
                 }
               }
             }
