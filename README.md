@@ -27,7 +27,7 @@ The `master` branch of this repository is a stable branch that users clone when 
 
 In addition to the Backend and the Frontend, Central deploys services:
 
-* Central relies on [pyxform-http](https://github.com/getodk/pyxform-http) for converting Forms from XLSForm. It generally shouldn't be needed in development but can be run locally.
+* Central relies on [pyxform-http](https://github.com/getodk/pyxform-http) for converting Forms from `XLSForm`. It generally shouldn't be needed in development but can be run locally.
 * Central relies on [Enketo](https://github.com/enketo/enketo-express) for Web Form functionality. Enketo can be run locally and configured to work with Frontend and Backend in development by following [these instructions](https://github.com/getodk/central-frontend/blob/master/docs/enketo.md).
 
 If you want to work on the Central codebase and don't want to setup dependent services like Postgresql, Enketo, etc manually then you can run `make dev`, which will start those services as Docker containers. This setup requires a local domain name, `central-dev` is a good choice. Add this name in the following places:
