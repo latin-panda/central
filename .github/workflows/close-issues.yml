@@ -27,13 +27,17 @@ jobs:
               const issueNumber = Number(match[2]);
               if (!closedIssues.has(issueNumber)) {
                 closedIssues.add(issueNumber);
-                await github.rest.issues.update({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issueNumber,
-                  state: 'closed'
-                });
-                console.log(`Closed issue #${issueNumber}`);
+                try {
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    state: 'closed'
+                  });
+                  console.log(`Closed issue #${issueNumber}`);
+                } catch (e) {
+                  console.log(`Couldn't automatically close issue #${issueNumber}. Skipping issue.`);
+                }
               }
             }
 
